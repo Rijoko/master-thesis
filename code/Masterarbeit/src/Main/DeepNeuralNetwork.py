@@ -76,12 +76,10 @@ with tf.Session() as session:
         print("Iteration " + (counter).__str__())
             
         try:
-            a, b = session.run(nextElement)
-            showImage(b)
-            #modified, originals, fileNames = session.run(identityImages)
+            modified, originals, fileNames = session.run(identityImages)
             #print(session.run(h_fc1_drop, feed_dict={ keep_prob : 0.95 }))
-            #showImage(modified[0])
-            print (fileNames)
+            showImage(modified[0])
+            showImage(originals[0])
         except tf.errors.OutOfRangeError:
             break
         '''
